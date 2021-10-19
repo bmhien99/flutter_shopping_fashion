@@ -22,38 +22,33 @@ class ProductCardAchives extends StatelessWidget {
                 builder: (context) => ProductAchivesPage(productId: productId ,)));
       },
       child: Container(
-          child:Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Card(
-                child: Container(
-                  height: 220,
-                  width: 180,
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 150,
-                        width: 120,
-                        child:Image.network("$imageUrl",fit: BoxFit.cover,),
-                      ),
-                      Container(
-                        margin: EdgeInsets.only(top: 4.0),
-                        child: Column(
-                          children: [
-                            Text(
-                              title!,style: Contants.regularHeading,
-                            ),
-                            Text(
-                              price!,style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w600, color: Colors.red),
-                            )
-                          ],
-                        ),
-                      ),
-                    ],
+          child:Card(
+            child: Container(
+              height: 220,
+              width: 180,
+              child: Column(
+                children: [
+                  Container(
+                    height: 150,
+                    width: 120,
+                    child:Image.network("$imageUrl",fit: BoxFit.cover,),
                   ),
-                ),
+                  Container(
+                    margin: EdgeInsets.only(top: 4.0),
+                    child: Column(
+                      children: [
+                        Text(
+                          title!,style: Contants.regularHeading,
+                        ),
+                        Text(
+                          price!,style: TextStyle(fontSize: 14.0, fontWeight: FontWeight.w600, color: Colors.red),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
               ),
-            ],
+            ),
           )
       ),
     );

@@ -198,35 +198,39 @@ class _ListProductAchivesState extends State<ListProductAchives> {
                       }
                       //Collection data
                       if (snapshot.connectionState == ConnectionState.done) {
-                        return Container(
-                          margin: EdgeInsets.symmetric(
-                              horizontal: 7.0, vertical: 80.0),
-                          child: ListView(
-                            children: [
-                              Column(
+                        return ListView(
+                          children: [
+                            Container(
+                              margin: EdgeInsets.symmetric(
+                                  horizontal: 7.0, vertical: 80.0),
+                              child: ListView(
                                 children: [
-                                  Container(
-                                    height: 700.0,
-                                    child: GridView.count(
-                                      crossAxisCount: 2,
-                                      crossAxisSpacing: 10,
-                                      childAspectRatio: 0.8,
-                                      scrollDirection: Axis.vertical,
-                                      children: snapshot.data!.docs.map((e) {
-                                        return ProductCardAchives(
-                                          title: e.data()['name'],
-                                          imageUrl: e.data()['imagepath'],
-                                          price: "\$ ${e.data()['price']}",
-                                          productId: e.id,
-                                        );
-                                      }).toList(),
-                                    ),
-                                  ),
+                                  Column(
+                                    children: [
+                                      Container(
+                                        height: 700.0,
+                                        child: GridView.count(
+                                          crossAxisCount: 2,
+                                          crossAxisSpacing: 10,
+                                          childAspectRatio: 0.8,
+                                          scrollDirection: Axis.vertical,
+                                          children: snapshot.data!.docs.map((e) {
+                                            return ProductCardAchives(
+                                              title: e.data()['name'],
+                                              imageUrl: e.data()['imagepath'],
+                                              price: "\$ ${e.data()['price']}",
+                                              productId: e.id,
+                                            );
+                                          }).toList(),
+                                        ),
+                                      ),
 
+                                    ],
+                                  ),
                                 ],
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         );
                       }
                       //Loading State
